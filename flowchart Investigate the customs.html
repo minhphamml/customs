@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quy trình xử lý chênh lệch NPL SXXK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .flow-arrow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px; /* Tăng chiều cao để mũi tên rõ hơn */
+        }
+        .flow-diamond {
+            width: 220px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotate(45deg);
+        }
+        .flow-diamond-text {
+            transform: rotate(-45deg);
+            max-width: 150px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-6 md:p-8 max-w-7xl">
+
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-blue-700">Quy trình Xử lý Chênh lệch Tồn kho Nguyên phụ liệu (NPL) SXXK</h1>
+            <p class="mt-3 text-lg text-gray-600">Phân công trách nhiệm và luồng công việc phối hợp giữa các bộ phận</p>
+        </header>
+
+        <!-- Section 1: Responsibility Matrix -->
+        <section id="responsibility" class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Ma trận Trách nhiệm</h2>
+            
+            <!-- Main Responsible Dept -->
+            <div class="flex justify-center mb-10">
+                <div class="bg-blue-600 text-white p-6 rounded-xl shadow-lg w-full max-w-lg text-center">
+                    <h3 class="text-lg font-bold uppercase">Bộ phận chịu trách nhiệm chính</h3>
+                    <p class="text-2xl font-bold mt-1">Phòng Xuất Nhập Khẩu</p>
+                    <p class="mt-3 text-blue-100">Là đầu mối làm việc, đối ứng và giải trình trực tiếp với cơ quan Hải quan.</p>
+                </div>
+            </div>
+
+            <!-- Coordinating Depts -->
+            <h3 class="text-xl md:text-2xl font-bold text-center text-gray-700 mb-8">Các bộ phận phối hợp điều tra</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Accounting -->
+                <div class="bg-white border-l-4 border-teal-500 p-5 rounded-lg shadow-md">
+                    <h4 class="font-bold text-lg text-teal-700">Kế Toán</h4>
+                    <ul class="mt-2 list-disc list-inside text-gray-600 space-y-1 text-sm">
+                        <li>Cung cấp số liệu tồn kho sổ sách.</li>
+                        <li>Đối chiếu chứng từ nhập, xuất.</li>
+                        <li>Tính toán giá trị chênh lệch.</li>
+                    </ul>
+                </div>
+                <!-- Warehouse -->
+                <div class="bg-white border-l-4 border-purple-500 p-5 rounded-lg shadow-md">
+                    <h4 class="font-bold text-lg text-purple-700">Kho</h4>
+                    <ul class="mt-2 list-disc list-inside text-gray-600 space-y-1 text-sm">
+                        <li>Cung cấp số liệu kiểm kê thực tế.</li>
+                        <li>Quản lý thẻ kho, chứng từ kho.</li>
+                        <li>Tìm nguyên nhân vật lý (hỏng, mất).</li>
+                    </ul>
+                </div>
+                <!-- Planning -->
+                <div class="bg-white border-l-4 border-orange-500 p-5 rounded-lg shadow-md">
+                    <h4 class="font-bold text-lg text-orange-700">Kế hoạch & Vật tư</h4>
+                    <ul class="mt-2 list-disc list-inside text-gray-600 space-y-1 text-sm">
+                        <li>Cung cấp, xây dựng định mức (BOM).</li>
+                        <li>Giải trình khi có thay đổi định mức.</li>
+                        <li>Chịu trách nhiệm tính chính xác của BOM.</li>
+                    </ul>
+                </div>
+                <!-- Production -->
+                <div class="bg-white border-l-4 border-red-500 p-5 rounded-lg shadow-md">
+                    <h4 class="font-bold text-lg text-red-700">Sản Xuất</h4>
+                    <ul class="mt-2 list-disc list-inside text-gray-600 space-y-1 text-sm">
+                        <li>Cung cấp số liệu NPL sử dụng thực tế.</li>
+                        <li>Xác nhận tỷ lệ hao hụt, phế phẩm.</li>
+                        <li>Đối chiếu lượng tiêu hao với định mức.</li>
+                    </ul>
+                </div>
+            </div>
+		
+		
+		            <!-- Coordinating Depts -->
+            <h3 class="text-xl md:text-2xl font-bold text-center text-gray-700 mb-8">Các bộ phận chịu trách nhiệm</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Accounting -->
+                <div class="bg-white border-l-4 border-teal-500 p-5 rounded-lg shadow-md">
+                    <h4 class="font-bold text-lg text-teal-700">Kế Toán</h4>
+                    <ul class="mt-2 list-disc list-inside text-gray-600 space-y-1 text-sm">
+                        <li>Chịu trách nhiệm về tính chính xác của số liệu kế toán.</li>
+                    </ul>
+                </div>
+                <!-- Warehouse -->
+                <div class="bg-white border-l-4 border-purple-500 p-5 rounded-lg shadow-md">
+                    <h4 class="font-bold text-lg text-purple-700">Kho</h4>
+                    <ul class="mt-2 list-disc list-inside text-gray-600 space-y-1 text-sm">
+                        <li>Tìm ra các nguyên nhân vật lý gây chênh lệch như hao hụt tự nhiên, mất mát, hư hỏng, xuất nhập nhầm lẫn.</li>
+                    </ul>
+                </div>
+                <!-- Planning -->
+                <div class="bg-white border-l-4 border-orange-500 p-5 rounded-lg shadow-md">
+                    <h4 class="font-bold text-lg text-orange-700">Kế hoạch & Vật tư</h4>
+                    <ul class="mt-2 list-disc list-inside text-gray-600 space-y-1 text-sm">
+                        <li>Giải trình nếu có sự thay đổi định mức, hoặc nếu định mức xây dựng chưa chính xác so với thực tế sản xuất.</li>
+                    </ul>
+                </div>
+                <!-- Production -->
+                <div class="bg-white border-l-4 border-red-500 p-5 rounded-lg shadow-md">
+                    <h4 class="font-bold text-lg text-red-700">Sản Xuất</h4>
+                    <ul class="mt-2 list-disc list-inside text-gray-600 space-y-1 text-sm">
+                        <li>Xác nhận lượng NPL tiêu hao thực tế có khớp với định mức hay không và giải trình các sai khác.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+		
+
+        <!-- Section 2: Flowchart -->
+        <section id="flowchart">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">Sơ đồ Quy trình Xử lý</h2>
+            <div class="flex flex-col items-center w-full">
+
+                <!-- Start -->
+                <div class="bg-green-500 text-white font-bold py-3 px-8 rounded-full shadow-lg">Bắt đầu: Phát hiện Chênh lệch</div>
+                <div class="text-sm text-gray-500 mt-1">(Từ Hải quan hoặc Tự kiểm tra)</div>
+                <div class="flow-arrow">
+                    <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                </div>
+
+                <!-- Step 1 -->
+                <div class="bg-white border-2 border-blue-500 text-center py-3 px-6 rounded-lg shadow-md w-full max-w-md">
+                    <div class="font-bold text-blue-700">Phòng XNK tiếp nhận & khởi tạo điều tra</div>
+                    <div class="text-sm text-gray-600">Thông báo và yêu cầu phối hợp từ các bộ phận liên quan</div>
+                </div>
+                <div class="flow-arrow">
+                    <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-gray-200 border border-gray-300 text-center p-4 rounded-lg shadow-inner w-full max-w-2xl">
+                    <div class="font-bold text-gray-800">Giai đoạn Đối chiếu & Phân tích</div>
+                    <div class="text-sm text-gray-600 mb-4">Các bộ phận cung cấp và đối chiếu dữ liệu chéo</div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+                        <div class="bg-teal-100 text-teal-800 p-2 rounded-md shadow-sm">Số liệu Kế toán</div>
+                        <div class="bg-purple-100 text-purple-800 p-2 rounded-md shadow-sm">Kiểm kê thực tế</div>
+                        <div class="bg-orange-100 text-orange-800 p-2 rounded-md shadow-sm">Định mức (BOM)</div>
+                        <div class="bg-red-100 text-red-800 p-2 rounded-md shadow-sm">Sử dụng thực tế</div>
+                    </div>
+                </div>
+                <div class="flow-arrow">
+                    <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                </div>
+
+                <!-- Step 3: Decision -->
+                <div class="bg-yellow-400 border-2 border-yellow-600 font-bold text-gray-800 shadow-lg flow-diamond">
+                    <span class="flow-diamond-text">Đã tìm ra nguyên nhân?</span>
+                </div>
+                
+                <!-- Branching Lines -->
+                <div class="w-full max-w-2xl flex justify-center my-4 relative h-6">
+                    <div class="absolute top-0 left-1/2 w-px h-6 bg-gray-500"></div>
+                    <div class="absolute top-1/2 left-1/4 w-1/2 h-px bg-gray-500"></div>
+                    <div class="absolute top-1/2 left-1/4 w-px h-6 bg-gray-500"></div>
+                    <div class="absolute top-1/2 right-1/4 w-px h-6 bg-gray-500"></div>
+                </div>
+
+                <!-- Branches -->
+                <div class="w-full max-w-3xl grid grid-cols-2 gap-x-8">
+                    <!-- YES Branch -->
+                    <div class="flex flex-col items-center">
+                        <div class="font-bold text-green-600 mb-2">CÓ</div>
+                        <div class="bg-white border-2 border-green-500 text-center py-3 px-6 rounded-lg shadow-md w-full">
+                            <div class="font-bold text-green-700">Lập biên bản & Báo cáo</div>
+                            <div class="text-sm text-gray-600">Ghi nhận nguyên nhân, số liệu và giải pháp</div>
+                        </div>
+                        <div class="flow-arrow">
+                            <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                        </div>
+                    </div>
+                    <!-- NO Branch -->
+                    <div class="flex flex-col items-center">
+                        <div class="font-bold text-red-600 mb-2">KHÔNG</div>
+                        <div class="bg-white border-2 border-red-500 text-center py-3 px-6 rounded-lg shadow-md w-full">
+                            <div class="font-bold text-red-700">Tái điều tra & Kiểm toán sâu</div>
+                            <div class="text-sm text-gray-600">Rà soát lại toàn bộ quy trình và chứng từ</div>
+                        </div>
+                        <!-- Loop back line -->
+                        <div class="w-full h-12 border-r-2 border-b-2 border-dashed border-red-400 -mr-16 mt-4 rounded-br-2xl"></div>
+                        <div class="text-red-500 text-sm italic -mr-16">Quay lại bước Phân tích...</div>
+                    </div>
+                </div>
+                
+                <!-- Final Step (Merge from YES branch) -->
+                <div class="w-full max-w-3xl flex justify-start pl-0 md:pl-[12.5%]">
+                     <div class="flex flex-col items-center w-1/2 md:w-full">
+                        <div class="bg-white border-2 border-blue-500 text-center py-3 px-6 rounded-lg shadow-md w-full mt-[-40px] md:mt-0">
+                            <div class="font-bold text-blue-700">Phòng XNK tổng hợp hồ sơ giải trình</div>
+                            <div class="text-sm text-gray-600">Bao gồm báo cáo, chứng từ, số liệu đối chiếu</div>
+                        </div>
+                        <div class="flow-arrow">
+                            <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                        </div>
+                        <div class="bg-blue-800 text-white font-bold py-3 px-8 rounded-full shadow-lg">Kết thúc: Nộp hồ sơ cho Hải quan</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center mt-16 py-6 border-t border-gray-300">
+            <p class="text-sm text-gray-500">Thông tin chỉ mang tính chất tham khảo.</p>
+        </footer>
+
+    </div>
+</body>
+</html>

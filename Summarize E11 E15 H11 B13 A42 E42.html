@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: Luồng Tờ Khai Hải Quan & Rủi Ro Chênh Lệch Dữ Liệu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F4F8;
+            scroll-behavior: smooth;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .flow-arrow {
+            font-size: 2rem;
+            color: #0085FF;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-[#004AAD] text-white p-6 md:p-10 text-center sticky top-0 z-10">
+        <h1 class="text-3xl md:text-5xl font-bold mb-2">Luồng Tờ Khai Hải Quan Việt Nam</h1>
+        <p class="text-lg md:text-xl text-[#B3DAFF] mb-4">Trực quan hóa quy trình & cách tránh các sai sót tốn kém</p>
+        <nav class="flex justify-center gap-2 md:gap-4 flex-wrap">
+            <a href="#declaration-types" class="px-3 py-2 text-sm md:px-4 md:py-2 bg-[#0085FF] rounded-full hover:bg-white hover:text-[#004AAD] transition-colors">Các Loại Hình</a>
+            <a href="#details-page" class="px-3 py-2 text-sm md:px-4 md:py-2 bg-[#0085FF] rounded-full hover:bg-white hover:text-[#004AAD] transition-colors">Giải Thích Chi Tiết</a>
+            <a href="#case-study" class="px-3 py-2 text-sm md:px-4 md:py-2 bg-[#0085FF] rounded-full hover:bg-white hover:text-[#004AAD] transition-colors">Tình Huống Thực Tế</a>
+            <a href="#consequences" class="px-3 py-2 text-sm md:px-4 md:py-2 bg-[#0085FF] rounded-full hover:bg-white hover:text-[#004AAD] transition-colors">Hậu Quả</a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8 mt-4">
+
+        <section id="intro" class="mb-12">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-bold text-[#004AAD] mb-4">Hai Thế Giới Của Tờ Khai Hải Quan</h2>
+                <p class="text-base md:text-lg mb-6">Hoạt động khai báo hải quan không phải là các giao dịch riêng lẻ, mà là một vòng đời khép kín. Việc quản lý không nhất quán giữa hàng hóa "đầu vào" và "đầu ra" là nguồn gốc của hầu hết các rủi ro pháp lý và tài chính.</p>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 text-center">
+                <div class="card p-6 w-full md:w-1/3">
+                    <div class="text-5xl mb-3">📥</div>
+                    <h3 class="text-xl font-semibold text-[#004AAD]">Nhóm 1: Tờ Khai Nhập Khẩu Ban Đầu</h3>
+                    <p class="mt-2">Hàng hóa được đưa vào Việt Nam, thường đi kèm các chính sách ưu đãi thuế (miễn thuế, không chịu thuế) với một mục đích sử dụng cụ thể đã được đăng ký.</p>
+                </div>
+                <div class="flow-arrow self-center transform rotate-90 md:rotate-0">→</div>
+                <div class="card p-6 w-full md:w-1/3">
+                    <div class="text-5xl mb-3">📤</div>
+                    <h3 class="text-xl font-semibold text-[#004AAD]">Nhóm 2: Tờ Khai Phát Sinh Sau</h3>
+                    <p class="mt-2">Xử lý hàng hóa sau khi nhập: tái xuất, tiêu hủy, hoặc **thay đổi mục đích sử dụng** (bán nội địa). Đây là lúc nghĩa vụ thuế có thể phát sinh.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="declaration-types" class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#004AAD] mb-8 text-center">Tổng Quan Các Loại Hình Tờ Khai Trọng Yếu</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                 <div class="card p-6 border-t-4 border-[#0085FF]">
+                    <h3 class="text-xl font-bold text-[#004AAD] mb-2">E11 & E15: Nhập Nguyên Liệu Sản Xuất</h3>
+                    <p>DNCX nhập nguyên liệu, vật tư từ nước ngoài (E11) hoặc nội địa (E15) để sản xuất hàng xuất khẩu. Các nguyên liệu này được **miễn thuế nhập khẩu** với điều kiện sản phẩm cuối cùng phải được xuất khẩu.</p>
+                </div>
+                <div class="card p-6 border-t-4 border-[#0085FF]">
+                    <h3 class="text-xl font-bold text-[#004AAD] mb-2">H11: Nhập Tạo Tài Sản Cố Định</h3>
+                    <p>Doanh nghiệp nhập khẩu máy móc, thiết bị để tạo tài sản cố định (TSCĐ) phục vụ dự án đầu tư, thường được hưởng ưu đãi thuế theo chính sách khuyến khích đầu tư.</p>
+                </div>
+                <div class="card p-6 border-t-4 border-[#FFBF66]">
+                    <h3 class="text-xl font-bold text-[#004AAD] mb-2">B13: Xuất Trả Hàng Đã Nhập</h3>
+                    <p>Xuất trả lại lô hàng đã nhập khẩu trước đó (còn nguyên trạng). Giúp doanh nghiệp có thể được hoàn lại thuế nhập khẩu đã nộp.</p>
+                </div>
+                <div class="card p-6 border-t-4 border-[#FFBF66]">
+                    <h3 class="text-xl font-bold text-[#004AAD] mb-2">A42: Chuyển Tiêu Thụ Nội Địa</h3>
+                    <p>Chuyển đổi mục đích sử dụng hàng hóa từ tạm nhập sang bán, biếu, tặng tại Việt Nam. Doanh nghiệp phải kê khai và nộp đầy đủ thuế tại thời điểm chuyển đổi.</p>
+                </div>
+                <div class="card p-6 md:col-span-2 lg:col-span-1 border-t-4 border-[#FF5733]">
+                     <h3 class="text-xl font-bold text-[#004AAD] mb-2">E42: DNCX Bán Hàng Vào Nội Địa</h3>
+                    <p>Đây là hành vi **thay đổi mục đích sử dụng** của nguyên liệu đã nhập miễn thuế (E11, E15). DNCX phải kê khai nộp thuế cho phần nguyên liệu cấu thành nên sản phẩm bán nội địa.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="details-page" class="mb-12 bg-white rounded-lg shadow-lg p-6 md:p-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#004AAD] mb-8 text-center">Giải Thích Chi Tiết Các Loại Hình Chuyển Đổi</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="card p-6 border-l-4 border-[#FFBF66]">
+                    <h3 class="text-2xl font-bold text-[#004AAD]">B13</h3>
+                    <p class="font-semibold mb-3">Xuất khẩu hàng hóa đã nhập khẩu</p>
+                    <div class="space-y-3 text-sm">
+                        <p><strong>Bản chất:</strong> Dùng để xuất khẩu (tái xuất) những lô hàng đã được nhập khẩu nhưng không được sử dụng, sản xuất hay tiêu thụ tại Việt Nam. Hàng hóa phải giữ nguyên trạng như lúc nhập.</p>
+                        <p><strong>Ý nghĩa:</strong> Là tờ khai "đầu ra" cho một tờ khai nhập khẩu trước đó. Doanh nghiệp có thể được hoàn lại thuế nhập khẩu đã nộp nếu đáp ứng điều kiện.</p>
+                        <p><strong>Ví dụ:</strong> Công ty A nhập 100 máy tính (A11), phát hiện 10 chiếc lỗi. Công ty A mở tờ khai B13 để xuất trả 10 chiếc này cho nhà cung cấp.</p>
+                    </div>
+                </div>
+                <div class="card p-6 border-l-4 border-[#FF5733]">
+                    <h3 class="text-2xl font-bold text-[#004AAD]">A42</h3>
+                    <p class="font-semibold mb-3">Chuyển tiêu thụ nội địa từ nguồn tạm nhập</p>
+                     <div class="space-y-3 text-sm">
+                        <p><strong>Bản chất:</strong> Chuyển mục đích sử dụng của hàng hóa từ "tạm nhập" sang "tiêu thụ nội địa". Thay vì tái xuất, doanh nghiệp quyết định bán hoặc sử dụng hàng tại Việt Nam.</p>
+                        <p><strong>Ý nghĩa:</strong> Chấm dứt nghĩa vụ phải tái xuất. Tại thời điểm mở tờ khai A42, doanh nghiệp phải kê khai và nộp đầy đủ các loại thuế như một tờ khai nhập kinh doanh.</p>
+                        <p><strong>Ví dụ:</strong> Công ty B tạm nhập máy móc (G12) để xây dựng. Sau dự án, thay vì tái xuất, họ quyết định bán lại trong nước. Công ty B phải mở tờ khai A42 và nộp thuế.</p>
+                    </div>
+                </div>
+                 <div class="card p-6 border-l-4 border-[#00C49F]">
+                    <h3 class="text-2xl font-bold text-[#004AAD]">E42</h3>
+                    <p class="font-semibold mb-3">Xuất khẩu sản phẩm của DNCX (vào nội địa)</p>
+                     <div class="space-y-3 text-sm">
+                        <p><strong>Bản chất:</strong> Dành riêng cho Doanh nghiệp Chế xuất (DNCX) khi bán sản phẩm do mình sản xuất vào thị trường nội địa. Quan hệ mua bán này được xem như xuất-nhập khẩu tại chỗ.</p>
+                        <p><strong>Ý nghĩa:</strong> Là hành vi thay đổi mục đích sử dụng của nguyên liệu được miễn thuế (nhập theo E11/E15). DNCX phải kê khai và nộp thuế nhập khẩu cho phần nguyên vật liệu cấu thành sản phẩm bán nội địa.</p>
+                        <p><strong>Ví dụ:</strong> DNCX C sản xuất linh kiện và bán một lô cho công ty D trong nước. DNCX C mở tờ khai E42, công ty D mở tờ khai nhập khẩu tại chỗ tương ứng (A12).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="case-study" class="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#004AAD] mb-2 text-center">Tình Huống Thực Tế: Rủi Ro Từ Chênh Lệch Dữ Liệu</h2>
+            <p class="text-center text-base md:text-lg max-w-3xl mx-auto mb-8">Hãy xem xét DNCX "VietTech" và cách một sai sót nhỏ trong quản lý dẫn đến hậu quả tài chính lớn.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-xl font-semibold text-[#004AAD] mb-4">Kịch bản của VietTech:</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><b>Đầu vào:</b> Nhập <b>1,000 mét</b> nguyên liệu X (loại hình E11 - Miễn thuế).</li>
+                        <li><b>Định mức:</b> Đăng ký 1 mét nguyên liệu X sản xuất được 2 linh kiện Y.</li>
+                        <li><b>Đầu ra 1:</b> Xuất khẩu <b>1,800 linh kiện Y</b>.</li>
+                        <li><b>Đầu ra 2:</b> Bán nội địa <b>300 linh kiện Y</b> (mở tờ khai E42).</li>
+                    </ul>
+                    <div class="mt-6 p-4 bg-red-50 border-l-4 border-[#FF5733] text-red-700">
+                        <h4 class="font-bold">Phân Tích Của Hải Quan:</h4>
+                        <p>Tổng sản phẩm đã sản xuất: 1,800 + 300 = 2,100 linh kiện.
+                        <br>Lượng nguyên liệu cần dùng: 2,100 / 2 = <b>1,050 mét</b>.
+                        <br><b class="text-xl">Phát hiện chênh lệch: 50 mét nguyên liệu không rõ nguồn gốc!</b></p>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="discrepancyChart"></canvas>
+                    <p class="text-center text-sm mt-2">Biểu đồ so sánh lượng nguyên liệu nhập khẩu và lượng nguyên liệu thực tế sử dụng theo báo cáo.</p>
+                </div>
+                <div class="md:col-span-2 text-center mt-8">
+                     <h3 class="text-xl font-semibold text-[#004AAD] mb-4">Phân Bổ Nguyên Liệu & Nghĩa Vụ Thuế</h3>
+                     <p class="max-w-2xl mx-auto mb-4">Trong 1,050 mét nguyên liệu đã sử dụng, việc bán 300 linh kiện vào nội địa đã làm thay đổi mục đích sử dụng của một phần nguyên liệu, làm phát sinh nghĩa vụ thuế.</p>
+                </div>
+                <div class="chart-container md:col-start-1">
+                    <canvas id="usageChart"></canvas>
+                    <p class="text-center text-sm mt-2">Tỷ lệ nguyên liệu được sử dụng cho sản xuất xuất khẩu so với sản xuất bán nội địa.</p>
+                </div>
+                <div class="flex items-center justify-center">
+                    <div class="p-6 bg-yellow-50 border-l-4 border-[#FFBF66] text-yellow-800">
+                        <h4 class="font-bold">Nghĩa Vụ Phát Sinh:</h4>
+                        <p>VietTech phải kê khai và nộp thuế nhập khẩu cho <b>150 mét</b> nguyên liệu X (dùng để sản xuất 300 linh kiện bán nội địa).
+                        <br>Đồng thời, phải giải trình về nguồn gốc của <b>50 mét</b> nguyên liệu chênh lệch.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="consequences" class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#004AAD] mb-8 text-center">Hậu Quả Của Việc Khai Báo Sai</h2>
+            <p class="text-center text-base md:text-lg max-w-3xl mx-auto mb-8">Chênh lệch dữ liệu không chỉ là một sai sót về số liệu, mà còn có thể bị xem là hành vi trốn thuế, dẫn đến các chế tài nghiêm khắc.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                <div class="card p-6">
+                    <div class="text-5xl mb-3">💰</div>
+                    <h3 class="text-xl font-semibold text-[#004AAD]">Truy Thu Thuế</h3>
+                    <p>Buộc nộp đủ số thuế còn thiếu cho phần hàng hóa sai mục đích hoặc chênh lệch.</p>
+                </div>
+                <div class="card p-6">
+                    <div class="text-5xl mb-3">⏳</div>
+                    <h3 class="text-xl font-semibold text-[#004AAD]">Phạt Chậm Nộp</h3>
+                    <p>Tính lãi 0.03%/ngày trên số tiền thuế nộp thiếu hoặc nộp chậm.</p>
+                </div>
+                <div class="card p-6">
+                    <div class="text-5xl mb-3">📄</div>
+                    <h3 class="text-xl font-semibold text-[#004AAD]">Phạt Vi Phạm Hành Chính</h3>
+                    <p>Phạt tiền từ 20% đến 3 lần số thuế trốn, tùy theo mức độ vi phạm.</p>
+                </div>
+                <div class="card p-6">
+                    <div class="text-5xl mb-3">🔍</div>
+                    <h3 class="text-xl font-semibold text-[#004AAD]">Kiểm Tra Sau Thông Quan</h3>
+                    <p>Doanh nghiệp bị đưa vào diện rủi ro cao, bị thanh tra, kiểm tra thường xuyên.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#004AAD] text-white p-6 text-center">
+        <h3 class="text-2xl font-bold mb-4">Quản Lý Chính Xác Là Chìa Khóa</h3>
+        <p class="max-w-3xl mx-auto mb-4">Để tránh rủi ro, doanh nghiệp cần: quản lý kho chặt chẽ, xây dựng định mức sản xuất chính xác, đối chiếu số liệu thường xuyên và tham vấn chuyên gia khi cần thiết.</p>
+        <p class="text-sm text-[#B3DAFF]">&copy; 2025 Infographic. Thông tin chỉ mang tính chất tham khảo.</p>
+    </footer>
+
+    <script>
+        function wrapLabel(str, maxWidth) {
+            if (str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            let lines = [];
+            let currentLine = words[0];
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + words[i].length + 1 <= maxWidth) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+        
+        window.onload = function() {
+            const discrepancyCtx = document.getElementById('discrepancyChart').getContext('2d');
+            new Chart(discrepancyCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Nguyên liệu'],
+                    datasets: [{
+                        label: 'Đã Nhập (mét)',
+                        data: [1000],
+                        backgroundColor: '#0085FF',
+                        borderColor: '#004AAD',
+                        borderWidth: 1
+                    }, {
+                        label: 'Thực Tế Dùng (mét)',
+                        data: [1050],
+                        backgroundColor: '#FF5733',
+                        borderColor: '#C13E1A',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Chênh Lệch Nguyên Liệu Nhập và Sử Dụng',
+                            font: { size: 16 }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Khối lượng (mét)'
+                            }
+                        }
+                    }
+                }
+            });
+
+            const usageCtx = document.getElementById('usageChart').getContext('2d');
+            new Chart(usageCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        wrapLabel('Dùng cho sản xuất xuất khẩu (900mét)', 16),
+                        wrapLabel('Dùng cho bán nội địa (150mét)', 16)
+                    ],
+                    datasets: [{
+                        label: 'Phân bổ nguyên liệu',
+                        data: [900, 150],
+                        backgroundColor: [
+                            '#0085FF',
+                            '#FFBF66'
+                        ],
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Phân Bổ Sử Dụng Nguyên Liệu (1050mét)',
+                            font: { size: 16 }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback
+                            }
+                        }
+                    }
+                }
+            });
+        };
+    </script>
+</body>
+</html>

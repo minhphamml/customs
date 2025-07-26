@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: Hướng Dẫn Mã Hải Quan E11, E15, H11</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Brilliant Blues (#0B486B, #3B8686, #79BD9A, #A8DBA8, #CFF09E) -->
+    <!-- 
+      Application Structure Plan: The infographic follows a narrative flow designed for optimal user understanding.
+      1.  Hook/Introduction: Starts with the "Why" – highlighting the severe consequences of incorrect declarations to grab user attention.
+      2.  High-Level Overview: Introduces the three codes (E11, E15, H11) in a simple, comparable card format for quick identification.
+      3.  Decision-Making Tool: The core of the infographic is a visual flowchart. This transforms the report's rule-based logic into an easy-to-follow, step-by-step decision path, which is more effective than text for this kind of information.
+      4.  Detailed Comparison: A structured table provides an in-depth comparison for users who need more detail after using the flowchart.
+      5.  Key Cautions: Concludes with critical notes and exceptions for each code to prevent common mistakes.
+      This structure was chosen to guide the user from awareness to decision-making and finally to detailed confirmation, making complex legal information digestible and actionable.
+    -->
+    <!-- 
+      Visualization & Content Choices:
+      - Report Info: Consequences of incorrect declarations. Goal: Inform/Warn. Viz/Method: High-impact statistical callouts with large typography and Unicode icons (HTML/CSS). Justification: Grabs attention and emphasizes the importance of the topic.
+      - Report Info: Core definitions of E11, E15, H11. Goal: Compare/Organize. Viz/Method: A 3-column responsive grid of styled cards (HTML/CSS). Justification: Allows for quick, at-a-glance comparison of the codes' primary purposes.
+      - Report Info: The logic of choosing a code. Goal: Organize/Guide. Viz/Method: A visual flowchart built entirely with structured HTML divs and Tailwind CSS borders/spacing. Interaction: Visual flow. Justification: This is the most effective way to represent a decision process without using prohibited SVG or Mermaid JS. It directly visualizes the report's logic.
+      - Report Info: Detailed differences. Goal: Compare. Viz/Method: A styled HTML table. Justification: Standard and best practice for presenting detailed, attribute-based comparisons.
+      - Report Info: Specific exceptions and notes. Goal: Inform. Viz/Method: Styled list/card format. Justification: Clearly separates critical warnings from the main content.
+      - Library/Method: No JS libraries like Chart.js were used as the source material is qualitative and process-oriented. A flowchart built with HTML/CSS is a more appropriate and effective visualization for this data than a bar or pie chart.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8fafc;
+        }
+        .flowchart-box {
+            border: 2px solid #3B8686; /* Teal */
+            background-color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            position: relative;
+        }
+        .flowchart-decision {
+            border: 2px dashed #0B486B; /* Dark Blue */
+            background-color: #f0f9ff;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-weight: 500;
+        }
+        .flowchart-result {
+            border: 2px solid #79BD9A; /* Green */
+            background-color: #f0fdf4;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-weight: 700;
+            color: #166534;
+        }
+        .flowchart-arrow {
+            position: relative;
+            text-align: center;
+            margin: 1rem 0;
+            padding: 0.5rem 0;
+        }
+        .flowchart-arrow::after {
+            content: '▼';
+            font-size: 1.5rem;
+            color: #3B8686;
+        }
+        .flowchart-branch {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            margin-top: 1rem;
+        }
+        .flowchart-branch::before {
+            content: '';
+            position: absolute;
+            top: -1rem;
+            left: 50%;
+            height: 1rem;
+            width: 2px;
+            background-color: #3B8686;
+        }
+        .flowchart-branch > div {
+            padding: 0 1rem;
+            position: relative;
+        }
+        .flowchart-branch > div::before {
+            content: '';
+            position: absolute;
+            top: -1rem;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #3B8686;
+        }
+        .flowchart-branch > div::after {
+            content: '';
+            position: absolute;
+            top: -1rem;
+            left: 50%;
+            height: 1rem;
+            width: 2px;
+            background-color: #3B8686;
+        }
+        .flowchart-branch > div:first-child::before { left: 50%; }
+        .flowchart-branch > div:last-child::before { right: 50%; }
+
+        .section-header {
+            color: #0B486B; /* Dark Blue */
+        }
+    </style>
+</head>
+<body class="text-gray-700">
+
+    <!-- Header -->
+    <header class="text-center bg-white py-12 px-4 shadow-md">
+        <h1 class="text-4xl md:text-5xl font-black section-header">Điều Hướng Hải Quan Việt Nam</h1>
+        <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">Hướng dẫn trực quan về Mã loại hình <span class="font-bold text-blue-600">E11</span>, <span class="font-bold text-teal-600">E15</span>, và <span class="font-bold text-purple-600">H11</span> theo Quyết định 1357/QĐ-TCHQ</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <!-- Section 1: Why it Matters -->
+        <section class="my-16 text-center">
+            <h2 class="text-3xl font-bold section-header mb-8">Tại Sao Việc Khai Báo Đúng Lại Quan Trọng?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-red-500">
+                    <div class="text-5xl mb-4">⚠️</div>
+                    <h3 class="text-2xl font-bold text-red-700">Rủi Ro Pháp Lý</h3>
+                    <p class="mt-2">Khai báo sai có thể dẫn đến phạt hành chính, truy thu thuế và thậm chí là truy cứu trách nhiệm hình sự.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-yellow-500">
+                    <div class="text-5xl mb-4">⏳</div>
+                    <h3 class="text-2xl font-bold text-yellow-700">Gián Đoạn Cung Ứng</h3>
+                    <p class="mt-2">Gây chậm trễ thông quan, tăng chi phí lưu kho, lưu bãi và ảnh hưởng đến kế hoạch sản xuất kinh doanh.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-blue-500">
+                    <div class="text-5xl mb-4">💰</div>
+                    <h3 class="text-2xl font-bold text-blue-700">Tổn Thất Tài Chính</h3>
+                    <p class="mt-2">Doanh nghiệp có thể bị truy thu số thuế thiếu và nộp tiền phạt chậm nộp, gây thiệt hại tài chính đáng kể.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Meet the Codes -->
+        <section class="my-16">
+            <h2 class="text-3xl font-bold section-header mb-8 text-center">Tổng Quan Các Mã Loại Hình Chính</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- E11 Card -->
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center transition-transform transform hover:-translate-y-2">
+                    <div class="text-6xl mb-4">✈️</div>
+                    <h3 class="text-3xl font-bold text-blue-600">E11</h3>
+                    <p class="font-semibold mt-2">Nhập Nguyên Liệu Của DNCX Từ Nước Ngoài</p>
+                    <p class="mt-4 text-gray-600">Dành cho **Doanh nghiệp chế xuất (DNCX)** nhập khẩu nguyên liệu, vật tư từ **nước ngoài** để sản xuất hàng xuất khẩu.</p>
+                </div>
+                <!-- E15 Card -->
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center transition-transform transform hover:-translate-y-2">
+                    <div class="text-6xl mb-4">🏭</div>
+                    <h3 class="text-3xl font-bold text-teal-600">E15</h3>
+                    <p class="font-semibold mt-2">Nhập Nguyên Liệu, Vật Tư Của DNCX Từ Nội Địa</p>
+                    <p class="mt-4 text-gray-600">Dành cho **DNCX** nhập khẩu nguyên liệu, vật tư từ **thị trường trong nước** hoặc từ các DNCX/khu phi thuế quan khác.</p>
+                </div>
+                <!-- H11 Card -->
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center transition-transform transform hover:-translate-y-2">
+                    <div class="text-6xl mb-4">🎁</div>
+                    <h3 class="text-3xl font-bold text-purple-600">H11</h3>
+                    <p class="font-semibold mt-2">Hàng Nhập Khẩu Khác (Phi Mậu Dịch)</p>
+                    <p class="mt-4 text-gray-600">Dành cho hàng hóa nhập khẩu **không nhằm mục đích kinh doanh** như quà biếu, tài sản di chuyển, hàng mẫu không thanh toán.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: The Decision Flowchart -->
+        <section class="my-16 bg-gray-100 py-12 rounded-lg">
+            <h2 class="text-3xl font-bold section-header mb-10 text-center">Lưu Đồ: Tìm Mã Loại Hình Của Bạn</h2>
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="flowchart-box">
+                    <h4 class="text-lg font-bold">BẮT ĐẦU</h4>
+                    <p>Doanh nghiệp của bạn có phải là<br><b class="text-xl">Doanh Nghiệp Chế Xuất (DNCX)</b> không?</p>
+                </div>
+
+                <div class="flowchart-branch">
+                    <!-- Branch: YES -->
+                    <div class="w-1/2">
+                        <div class="flowchart-decision">CÓ</div>
+                        <div class="flowchart-arrow"></div>
+                        <div class="flowchart-box">
+                            <p>Nguyên liệu được nhập từ đâu?</p>
+                        </div>
+                        <div class="flowchart-branch">
+                            <div class="w-1/2">
+                                <div class="flowchart-decision text-sm">Từ Nước Ngoài / Kho Ngoại Quan</div>
+                                <div class="flowchart-arrow"></div>
+                                <div class="flowchart-result text-blue-700 border-blue-500 bg-blue-50">Sử dụng Mã E11</div>
+                            </div>
+                            <div class="w-1/2">
+                                <div class="flowchart-decision text-sm">Từ Nội Địa / DNCX Khác</div>
+                                <div class="flowchart-arrow"></div>
+                                <div class="flowchart-result text-teal-700 border-teal-500 bg-teal-50">Sử dụng Mã E15</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Branch: NO -->
+                    <div class="w-1/2">
+                        <div class="flowchart-decision">KHÔNG</div>
+                        <div class="flowchart-arrow"></div>
+                        <div class="flowchart-box">
+                             <p>Hàng hóa nhập khẩu có nhằm<br><b class="text-xl">mục đích kinh doanh</b> không?</p>
+                        </div>
+                         <div class="flowchart-branch">
+                            <div class="w-1/2">
+                                <div class="flowchart-decision text-sm">KHÔNG (Phi mậu dịch)</div>
+                                <div class="flowchart-arrow"></div>
+                                <div class="flowchart-result text-purple-700 border-purple-500 bg-purple-50">Sử dụng Mã H11</div>
+                            </div>
+                            <div class="w-1/2">
+                                <div class="flowchart-decision text-sm">CÓ (Mậu dịch)</div>
+                                <div class="flowchart-arrow"></div>
+                                <div class="flowchart-result text-gray-700 border-gray-500 bg-gray-50">Sử dụng mã khác (ví dụ: A11, A12,...)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Deep Dive Comparison Table -->
+        <section class="my-16">
+            <h2 class="text-3xl font-bold section-header mb-8 text-center">Bảng So Sánh Chi Tiết</h2>
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead class="bg-gray-800 text-white">
+                            <tr>
+                                <th class="p-4 font-semibold">Tiêu chí</th>
+                                <th class="p-4 font-semibold">Mã E11</th>
+                                <th class="p-4 font-semibold">Mã E15</th>
+                                <th class="p-4 font-semibold">Mã H11</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="p-4 font-bold">Đối Tượng</td>
+                                <td class="p-4">Doanh nghiệp chế xuất (DNCX)</td>
+                                <td class="p-4">Doanh nghiệp chế xuất (DNCX)</td>
+                                <td class="p-4">Mọi tổ chức, cá nhân</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="p-4 font-bold">Nguồn Gốc Hàng Hóa</td>
+                                <td class="p-4">Từ nước ngoài, kho ngoại quan</td>
+                                <td class="p-4">Từ nội địa, DNCX khác, khu phi thuế quan khác</td>
+                                <td class="p-4">Từ nước ngoài</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="p-4 font-bold">Mục Đích Nhập Khẩu</td>
+                                <td class="p-4">Nguyên liệu, vật tư để sản xuất, gia công hàng xuất khẩu</td>
+                                <td class="p-4">Nguyên liệu, vật tư để sản xuất, gia công hàng xuất khẩu</td>
+                                <td class="p-4">Phi mậu dịch: quà biếu, tài sản di chuyển, hàng mẫu...</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="p-4 font-bold">Chính Sách Thuế</td>
+                                <td class="p-4 text-green-600 font-semibold">Miễn thuế nhập khẩu</td>
+                                <td class="p-4 text-green-600 font-semibold">Miễn thuế nhập khẩu</td>
+                                <td class="p-4">Miễn/chịu thuế tùy thuộc vào định mức và quy định cụ thể</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 5: Cautions -->
+        <section class="my-16">
+             <h2 class="text-3xl font-bold section-header mb-8 text-center">Lưu Ý Quan Trọng</h2>
+             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                 <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                     <h3 class="font-bold text-xl text-blue-800 mb-2">Đối với mã E11</h3>
+                     <p>Cần phân biệt rõ ràng với các mã "E11.xx" trong các hệ thống phân loại sản phẩm khác (như thực phẩm, nông sản) để tránh nhầm lẫn nghiêm trọng khi khai báo.</p>
+                 </div>
+                 <div class="bg-teal-50 p-6 rounded-lg border-l-4 border-teal-500">
+                     <h3 class="font-bold text-xl text-teal-800 mb-2">Đối với mã E15</h3>
+                     <p>Một số hàng hóa mua từ nội địa như văn phòng phẩm, vật liệu xây dựng... phục vụ vận hành chung có thể được lựa chọn không làm thủ tục hải quan.</p>
+                 </div>
+                 <div class="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500">
+                     <h3 class="font-bold text-xl text-purple-800 mb-2">Đối với mã H11</h3>
+                     <p>Hàng hóa vẫn phải tuân thủ các quy định về kiểm tra chuyên ngành và nhãn mác. Việc bán lại hàng H11 là hợp pháp nhưng phải tuân thủ các quy định về kinh doanh và thuế khác.</p>
+                 </div>
+             </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center bg-gray-800 text-gray-400 py-6 mt-12">
+        <p>Nội dung chỉ mang tính chất tham khảo, dựa trên Quyết định 1357/QĐ-TCHQ.</p>
+        <p class="mt-1">Luôn tham vấn chuyên gia hải quan để có hướng dẫn chính xác nhất cho trường hợp của bạn.</p>
+    </footer>
+
+</body>
+</html>
